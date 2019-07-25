@@ -36,12 +36,3 @@ RUN curl -sSLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux
 
 # Encoding
 ENV LANG C.UTF-8
-
-WORKDIR /app
-
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
-
-RUN bundle install -j20
-
-ADD . /app
